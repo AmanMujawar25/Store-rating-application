@@ -1,0 +1,605 @@
+
+/* =========================================
+   CREATE STORE PAGE
+========================================= */
+
+.create-store-page {
+    min-height: 100vh;
+    background: #f5f7fb;
+    padding: 30px;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #1f2937;
+}
+
+
+/* =========================================
+   BACK TO DASHBOARD
+========================================= */
+
+.create-store-page > button {
+    background: #ffffff;
+    color: #374151;
+    border: 1px solid #d1d5db;
+    padding: 10px 17px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    margin-bottom: 25px;
+    transition: all 0.2s ease;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+.create-store-page > button:hover {
+    background: #f3f4f6;
+    border-color: #9ca3af;
+    transform: translateY(-1px);
+}
+
+
+/* =========================================
+   PAGE HEADER
+========================================= */
+
+.create-store-header {
+    max-width: 1050px;
+    margin: 0 auto 25px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 20px;
+}
+
+.page-label {
+    display: block;
+    margin-bottom: 7px;
+
+    color: #6b7280;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.create-store-header h1 {
+    margin: 0;
+
+    color: #111827;
+    font-size: 32px;
+    font-weight: 700;
+}
+
+.create-store-header p {
+    margin: 8px 0 0;
+
+    color: #6b7280;
+    font-size: 14px;
+    font-style: italic;
+}
+
+.store-header-icon {
+    width: 58px;
+    height: 58px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #ffffff;
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+
+    font-size: 28px;
+
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+}
+
+
+/* =========================================
+   FORM CARD
+========================================= */
+
+.create-store-card {
+    max-width: 1050px;
+    margin: 0 auto;
+
+    background: #ffffff;
+    border: 1px solid #e5e7eb;
+    border-radius: 14px;
+
+    padding: 30px;
+    box-sizing: border-box;
+
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+}
+
+
+/* =========================================
+   CARD TITLE
+========================================= */
+
+.card-title {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+
+    padding-bottom: 22px;
+    margin-bottom: 25px;
+
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.card-icon {
+    width: 44px;
+    height: 44px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #f3f4f6;
+    border-radius: 10px;
+
+    font-size: 23px;
+}
+
+.card-title h2 {
+    margin: 0;
+
+    color: #111827;
+    font-size: 19px;
+}
+
+.card-title p {
+    margin: 5px 0 0;
+
+    color: #6b7280;
+    font-size: 13px;
+}
+
+
+/* =========================================
+   FORM ROW
+========================================= */
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 22px;
+}
+
+
+/* =========================================
+   FORM GROUP
+========================================= */
+
+.form-group {
+    margin-bottom: 22px;
+}
+
+.form-group label {
+    display: block;
+
+    margin-bottom: 8px;
+
+    color: #374151;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.form-group label span {
+    color: #6b7280;
+}
+
+
+/* =========================================
+   INPUT WRAPPER
+========================================= */
+
+.input-wrapper {
+    height: 46px;
+
+    display: flex;
+    align-items: center;
+
+    background: #ffffff;
+
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+
+    transition: all 0.2s ease;
+}
+
+.input-wrapper:focus-within {
+    border-color: #6b7280;
+
+    box-shadow: 0 0 0 3px rgba(107, 114, 128, 0.10);
+}
+
+.input-icon {
+    width: 45px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: #6b7280;
+    font-size: 16px;
+
+    flex-shrink: 0;
+}
+
+.input-wrapper input {
+    width: 100%;
+    height: 100%;
+
+    padding: 0 12px 0 0;
+
+    border: none;
+    outline: none;
+
+    background: transparent;
+
+    color: #374151;
+    font-size: 14px;
+
+    box-sizing: border-box;
+}
+
+.input-wrapper input::placeholder {
+    color: #9ca3af;
+}
+
+
+/* =========================================
+   SELECT
+========================================= */
+
+.select-wrapper select {
+    width: 100%;
+    height: 100%;
+
+    padding: 0 12px 0 0;
+
+    border: none;
+    outline: none;
+
+    background: transparent;
+
+    color: #374151;
+    font-size: 14px;
+
+    cursor: pointer;
+}
+
+.select-wrapper select:disabled {
+    cursor: not-allowed;
+    color: #9ca3af;
+}
+
+
+/* =========================================
+   TEXTAREA
+========================================= */
+
+.textarea-wrapper {
+    min-height: 105px;
+
+    display: flex;
+    align-items: flex-start;
+
+    background: #ffffff;
+
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+
+    transition: all 0.2s ease;
+}
+
+.textarea-wrapper:focus-within {
+    border-color: #6b7280;
+
+    box-shadow: 0 0 0 3px rgba(107, 114, 128, 0.10);
+}
+
+.textarea-icon {
+    width: 45px;
+
+    display: flex;
+    justify-content: center;
+
+    padding-top: 14px;
+
+    color: #6b7280;
+    font-size: 16px;
+
+    flex-shrink: 0;
+}
+
+.textarea-wrapper textarea {
+    width: 100%;
+    min-height: 105px;
+
+    padding: 13px 12px 13px 0;
+
+    resize: vertical;
+
+    border: none;
+    outline: none;
+
+    background: transparent;
+
+    color: #374151;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+
+    box-sizing: border-box;
+}
+
+.textarea-wrapper textarea::placeholder {
+    color: #9ca3af;
+}
+
+
+/* =========================================
+   OWNER INFORMATION
+========================================= */
+
+.owner-info {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+
+    margin-top: 10px;
+
+    padding: 12px 14px;
+
+    background: #f8fafc;
+
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+}
+
+.owner-info > span {
+    font-size: 16px;
+    flex-shrink: 0;
+}
+
+.owner-info p {
+    margin: 0;
+
+    color: #6b7280;
+    font-size: 12px;
+    line-height: 1.5;
+}
+
+
+/* =========================================
+   SUCCESS / ERROR MESSAGE
+========================================= */
+
+.store-message {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    padding: 13px 15px;
+
+    margin-bottom: 22px;
+
+    border-radius: 8px;
+
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.store-message > span {
+    font-weight: 700;
+}
+
+.store-message.success {
+    background: #f0fdf4;
+    border: 1px solid #bbf7d0;
+    color: #166534;
+}
+
+.store-message.error {
+    background: #fef2f2;
+    border: 1px solid #fecaca;
+    color: #b91c1c;
+}
+
+
+/* =========================================
+   FORM ACTIONS
+========================================= */
+
+.form-actions {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 12px;
+
+    padding-top: 22px;
+
+    border-top: 1px solid #e5e7eb;
+}
+
+
+/* =========================================
+   CLEAR BUTTON
+========================================= */
+
+.clear-store-btn {
+    height: 44px;
+
+    padding: 0 21px;
+
+    background: #ffffff;
+    color: #4b5563;
+
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: all 0.2s ease;
+}
+
+.clear-store-btn:hover {
+    background: #f3f4f6;
+    border-color: #9ca3af;
+}
+
+
+/* =========================================
+   CREATE STORE BUTTON
+========================================= */
+
+.create-store-btn {
+    height: 44px;
+
+    padding: 0 24px;
+
+    background: #111827;
+    color: #ffffff;
+
+    border: none;
+    border-radius: 8px;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: all 0.2s ease;
+
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.12);
+}
+
+.create-store-btn:hover:not(:disabled) {
+    background: #374151;
+    transform: translateY(-1px);
+}
+
+.create-store-btn:active:not(:disabled) {
+    transform: translateY(0);
+}
+
+.create-store-btn:disabled {
+    background: #9ca3af;
+    cursor: not-allowed;
+    box-shadow: none;
+}
+
+
+/* =========================================
+   FOOTER
+========================================= */
+
+.create-store-footer {
+    max-width: 1050px;
+
+    margin: 20px auto 0;
+
+    text-align: center;
+
+    color: #9ca3af;
+    font-size: 12px;
+}
+
+.create-store-footer span {
+    margin-right: 7px;
+}
+
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 800px) {
+
+    .create-store-page {
+        padding: 22px;
+    }
+
+    .create-store-header h1 {
+        font-size: 28px;
+    }
+
+    .create-store-card {
+        padding: 24px;
+    }
+
+    .form-row {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 550px) {
+
+    .create-store-page {
+        padding: 15px;
+    }
+
+    .create-store-page > button {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .create-store-header {
+        flex-direction: column;
+        align-items: flex-start;
+        margin-bottom: 20px;
+    }
+
+    .store-header-icon {
+        display: none;
+    }
+
+    .create-store-header h1 {
+        font-size: 25px;
+    }
+
+    .create-store-header p {
+        font-size: 13px;
+    }
+
+    .create-store-card {
+        padding: 18px;
+        border-radius: 10px;
+    }
+
+    .card-title {
+        gap: 10px;
+    }
+
+    .card-title h2 {
+        font-size: 17px;
+    }
+
+    .form-actions {
+        flex-direction: column-reverse;
+    }
+
+    .clear-store-btn,
+    .create-store-btn {
+        width: 100%;
+    }
+
+    .create-store-footer {
+        line-height: 1.6;
+    }
+}
+

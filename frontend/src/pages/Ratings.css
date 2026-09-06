@@ -1,0 +1,416 @@
+
+/* ================================
+   RATINGS PAGE
+================================ */
+
+.ratings-page {
+    min-height: 100vh;
+    background: #f5f7fb;
+    padding: 30px;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #1f2937;
+}
+
+
+/* ================================
+   HEADER
+================================ */
+
+.ratings-header {
+    max-width: 1400px;
+    margin: 0 auto 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+
+.ratings-header h1 {
+    margin: 0;
+    font-size: 32px;
+    font-weight: 700;
+    color: #111827;
+}
+
+.ratings-header p {
+    margin: 7px 0 0;
+    color: #6b7280;
+    font-size: 15px;
+    font-style: italic;
+}
+
+
+/* ================================
+   BACK TO DASHBOARD BUTTON
+================================ */
+
+.back-dashboard-btn {
+    border: 1px solid #d1d5db;
+    background: #ffffff;
+    color: #374151;
+    padding: 11px 18px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
+}
+
+.back-dashboard-btn:hover {
+    background: #f3f4f6;
+    border-color: #9ca3af;
+    transform: translateY(-1px);
+}
+
+.back-dashboard-btn:active {
+    transform: translateY(0);
+}
+
+
+/* ================================
+   MAIN CONTAINER
+================================ */
+
+.ratings-container {
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+
+/* ================================
+   FILTER CARD
+================================ */
+
+.filter-card {
+    background: #ffffff;
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+    padding: 22px;
+    display: grid;
+    grid-template-columns: minmax(250px, 1fr) 180px 180px 180px auto;
+    gap: 18px;
+    align-items: end;
+    margin-bottom: 20px;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.04);
+}
+
+.filter-group {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+}
+
+.filter-group label {
+    font-size: 13px;
+    font-weight: 600;
+    color: #374151;
+}
+
+.filter-group input,
+.filter-group select {
+    width: 100%;
+    height: 42px;
+    box-sizing: border-box;
+    border: 1px solid #d1d5db;
+    border-radius: 7px;
+    padding: 0 12px;
+    background: #ffffff;
+    color: #374151;
+    font-size: 14px;
+    outline: none;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.filter-group input::placeholder {
+    color: #9ca3af;
+}
+
+.filter-group input:focus,
+.filter-group select:focus {
+    border-color: #6b7280;
+    box-shadow: 0 0 0 3px rgba(107, 114, 128, 0.10);
+}
+
+
+/* ================================
+   CLEAR BUTTON
+================================ */
+
+.clear-btn {
+    height: 42px;
+    padding: 0 18px;
+    border: 1px solid #d1d5db;
+    border-radius: 7px;
+    background: #f9fafb;
+    color: #374151;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.clear-btn:hover {
+    background: #e5e7eb;
+    border-color: #9ca3af;
+}
+
+
+/* ================================
+   ERROR MESSAGE
+================================ */
+
+.error-message {
+    background: #fef2f2;
+    color: #b91c1c;
+    border: 1px solid #fecaca;
+    border-radius: 8px;
+    padding: 13px 16px;
+    margin-bottom: 20px;
+    font-size: 14px;
+}
+
+
+/* ================================
+   RATINGS CARD
+================================ */
+
+.ratings-card {
+    background: #ffffff;
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.04);
+}
+
+
+/* ================================
+   CARD HEADER
+================================ */
+
+.ratings-card-header {
+    padding: 22px 24px;
+    border-bottom: 1px solid #e5e7eb;
+    background: #ffffff;
+}
+
+.ratings-card-header h2 {
+    margin: 0;
+    font-size: 20px;
+    font-weight: 700;
+    color: #111827;
+}
+
+.ratings-card-header p {
+    margin: 6px 0 0;
+    font-size: 13px;
+    color: #6b7280;
+}
+
+
+/* ================================
+   TABLE
+================================ */
+
+.table-wrapper {
+    width: 100%;
+    overflow-x: auto;
+}
+
+.ratings-table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 850px;
+}
+
+.ratings-table thead {
+    background: #f9fafb;
+}
+
+.ratings-table th {
+    padding: 14px 18px;
+    text-align: left;
+    font-size: 12px;
+    font-weight: 700;
+    color: #6b7280;
+    text-transform: uppercase;
+    letter-spacing: 0.4px;
+    border-bottom: 1px solid #e5e7eb;
+    white-space: nowrap;
+}
+
+.ratings-table td {
+    padding: 16px 18px;
+    border-bottom: 1px solid #f0f1f3;
+    font-size: 14px;
+    color: #4b5563;
+    vertical-align: middle;
+}
+
+.ratings-table tbody tr {
+    transition: background 0.2s ease;
+}
+
+.ratings-table tbody tr:hover {
+    background: #f9fafb;
+}
+
+.ratings-table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+
+/* ================================
+   CUSTOMER NAME
+================================ */
+
+.ratings-table td strong {
+    color: #111827;
+    font-weight: 600;
+}
+
+
+/* ================================
+   RATING CELL
+================================ */
+
+.rating-cell {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    white-space: nowrap;
+}
+
+.stars {
+    display: flex;
+    gap: 2px;
+}
+
+.star {
+    font-size: 17px;
+    color: #d1d5db;
+}
+
+.star.active {
+    color: #f59e0b;
+}
+
+.rating-cell > span:last-child {
+    font-size: 13px;
+    font-weight: 600;
+    color: #4b5563;
+}
+
+
+/* ================================
+   LOADING
+================================ */
+
+.loading {
+    min-height: 180px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #6b7280;
+    font-size: 15px;
+}
+
+
+/* ================================
+   NO DATA
+================================ */
+
+.no-data {
+    min-height: 220px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #6b7280;
+    font-size: 15px;
+}
+
+
+/* ================================
+   RESPONSIVE
+================================ */
+
+@media (max-width: 1100px) {
+    .filter-card {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .search-group {
+        grid-column: span 2;
+    }
+
+    .clear-btn {
+        width: 120px;
+    }
+}
+
+
+@media (max-width: 700px) {
+    .ratings-page {
+        padding: 20px 15px;
+    }
+
+    .ratings-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .ratings-header h1 {
+        font-size: 27px;
+    }
+
+    .back-dashboard-btn {
+        width: 100%;
+    }
+
+    .filter-card {
+        grid-template-columns: 1fr;
+        padding: 18px;
+    }
+
+    .search-group {
+        grid-column: span 1;
+    }
+
+    .clear-btn {
+        width: 100%;
+    }
+
+    .ratings-card-header {
+        padding: 18px;
+    }
+
+    .ratings-table th,
+    .ratings-table td {
+        padding: 13px 14px;
+    }
+}
+
+
+@media (max-width: 450px) {
+    .ratings-page {
+        padding: 15px 10px;
+    }
+
+    .ratings-header h1 {
+        font-size: 24px;
+    }
+
+    .ratings-header p {
+        font-size: 13px;
+    }
+
+    .filter-card {
+        padding: 15px;
+    }
+
+    .ratings-card-header h2 {
+        font-size: 18px;
+    }
+}
+
