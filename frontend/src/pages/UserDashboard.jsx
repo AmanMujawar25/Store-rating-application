@@ -88,11 +88,12 @@ function UserDashboard() {
     }
   };
 
-  const logout = () => {
-    localStorage.removeItem("token");
-    localStorage.removeItem("user");
-    window.location.reload();
-  };
+ const logout = () => {
+  localStorage.removeItem("token");
+  localStorage.removeItem("user");
+
+  window.location.reload();
+};
 
   const getInitial = (name) => {
     return name ? name.charAt(0).toUpperCase() : "S";

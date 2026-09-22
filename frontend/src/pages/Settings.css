@@ -1,580 +1,321 @@
+/* Settings.css - Complete styling for settings page */
 
-/* =========================================
-   SETTINGS PAGE
-========================================= */
+/* --- Reset & Base --- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: #f0f4f8;
+  color: #0f172a;
+}
+
+/* --- Settings Page Layout --- */
 .settings-page {
-    min-height: 100vh;
-    background: #f5f7fb;
-    padding: 30px;
-    box-sizing: border-box;
-    font-family: Arial, Helvetica, sans-serif;
-    color: #1f2937;
+  padding: 32px 40px 24px;
+  max-width: 800px;
+  margin: 0 auto;
+  min-height: 100vh;
 }
 
-
-/* =========================================
-   HEADER
-========================================= */
-
+/* --- Header --- */
 .settings-header {
-    max-width: 900px;
-    margin: 0 auto 25px;
-
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-
-    gap: 20px;
-}
-
-.settings-label {
-    display: block;
-
-    margin-bottom: 7px;
-
-    color: #6b7280;
-    font-size: 12px;
-    font-weight: 700;
-
-    letter-spacing: 1px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 24px;
+  border-bottom: 1px solid #e2e8f0;
+  margin-bottom: 32px;
 }
 
 .settings-header h1 {
-    margin: 0;
-
-    color: #111827;
-    font-size: 32px;
-    font-weight: 700;
+  font-size: 28px;
+  font-weight: 700;
+  color: #0f172a;
 }
 
 .settings-header p {
-    margin: 8px 0 0;
-
-    color: #6b7280;
-    font-size: 14px;
-    font-style: italic;
+  color: #64748b;
+  font-size: 15px;
+  margin-top: 4px;
 }
 
-
-/* =========================================
-   BACK BUTTON
-========================================= */
-
 .back-dashboard-btn {
-    background: #ffffff;
-    color: #374151;
-
-    border: 1px solid #d1d5db;
-    border-radius: 8px;
-
-    padding: 10px 17px;
-
-    font-size: 14px;
-    font-weight: 600;
-
-    cursor: pointer;
-
-    transition: all 0.2s ease;
-
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  padding: 10px 20px;
+  background: #f1f5f9;
+  border: none;
+  border-radius: 12px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #1e293b;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-family: inherit;
+  white-space: nowrap;
 }
 
 .back-dashboard-btn:hover {
-    background: #f3f4f6;
-    border-color: #9ca3af;
-
-    transform: translateY(-1px);
+  background: #e2e8f0;
+  transform: translateX(-2px);
 }
 
-
-/* =========================================
-   CONTAINER
-========================================= */
-
+/* --- Settings Container --- */
 .settings-container {
-    max-width: 900px;
-    margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
 }
 
-
-/* =========================================
-   SETTINGS CARD
-========================================= */
-
+/* --- Settings Card --- */
 .settings-card {
-    background: #ffffff;
-
-    border: 1px solid #e5e7eb;
-    border-radius: 14px;
-
-    padding: 30px;
-
-    box-sizing: border-box;
-
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+  background: #ffffff;
+  border-radius: 20px;
+  padding: 32px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
 }
-
-
-/* =========================================
-   CARD HEADER
-========================================= */
 
 .settings-card-header {
-    display: flex;
-    align-items: center;
-
-    gap: 14px;
-
-    padding-bottom: 22px;
-    margin-bottom: 25px;
-
-    border-bottom: 1px solid #e5e7eb;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 24px;
 }
 
 .settings-icon {
-    width: 46px;
-    height: 46px;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    background: #f3f4f6;
-
-    border-radius: 10px;
-
-    font-size: 23px;
+  width: 52px;
+  height: 52px;
+  background: #f1f5f9;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 28px;
+  flex-shrink: 0;
 }
 
 .settings-card-header h2 {
-    margin: 0;
-
-    color: #111827;
-    font-size: 20px;
+  font-size: 20px;
+  font-weight: 700;
+  color: #0f172a;
 }
 
 .settings-card-header p {
-    margin: 5px 0 0;
-
-    color: #6b7280;
-    font-size: 13px;
+  font-size: 14px;
+  color: #64748b;
+  margin-top: 2px;
 }
 
-
-/* =========================================
-   SUCCESS MESSAGE
-========================================= */
-
+/* --- Messages --- */
 .success-message {
-    display: flex;
-    align-items: center;
-
-    gap: 10px;
-
-    padding: 13px 15px;
-
-    margin-bottom: 20px;
-
-    background: #f0fdf4;
-
-    border: 1px solid #bbf7d0;
-    border-radius: 8px;
-
-    color: #166534;
-
-    font-size: 14px;
-    font-weight: 500;
+  padding: 14px 18px;
+  background: #dcfce7;
+  color: #166534;
+  border-radius: 12px;
+  border: 1px solid #bbf7d0;
+  margin-bottom: 20px;
+  font-size: 14px;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 8px;
 }
-
-.success-message span {
-    font-weight: 700;
-}
-
-
-/* =========================================
-   ERROR MESSAGE
-========================================= */
 
 .error-message {
-    display: flex;
-    align-items: center;
-
-    gap: 10px;
-
-    padding: 13px 15px;
-
-    margin-bottom: 20px;
-
-    background: #fef2f2;
-
-    border: 1px solid #fecaca;
-    border-radius: 8px;
-
-    color: #b91c1c;
-
-    font-size: 14px;
-    font-weight: 500;
+  padding: 14px 18px;
+  background: #fee2e2;
+  color: #991b1b;
+  border-radius: 12px;
+  border: 1px solid #fecaca;
+  margin-bottom: 20px;
+  font-size: 14px;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 8px;
 }
 
-.error-message span {
-    font-weight: 700;
-}
-
-
-/* =========================================
-   FORM
-========================================= */
-
+/* --- Password Form --- */
 .password-form {
-    width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
 
 .form-group {
-    margin-bottom: 21px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
 }
 
 .form-group label {
-    display: block;
-
-    margin-bottom: 8px;
-
-    color: #374151;
-
-    font-size: 13px;
-    font-weight: 600;
+  font-size: 14px;
+  font-weight: 600;
+  color: #1e293b;
+  letter-spacing: 0.3px;
 }
 
-
-/* =========================================
-   PASSWORD INPUT
-========================================= */
-
-.password-input {
-    height: 46px;
-
-    display: flex;
-    align-items: center;
-
-    background: #ffffff;
-
-    border: 1px solid #d1d5db;
-    border-radius: 8px;
-
-    transition: all 0.2s ease;
+.form-group input {
+  padding: 14px 18px;
+  border: 2px solid #e2e8f0;
+  border-radius: 14px;
+  font-size: 15px;
+  color: #0f172a;
+  background: #f8fafc;
+  transition: all 0.2s ease;
+  font-family: inherit;
 }
 
-.password-input:focus-within {
-    border-color: #6b7280;
-
-    box-shadow:
-        0 0 0 3px rgba(107, 114, 128, 0.10);
+.form-group input:focus {
+  outline: none;
+  border-color: #3b82f6;
+  background: #ffffff;
+  box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.10);
 }
 
-.password-input > span {
-    width: 45px;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    font-size: 16px;
-
-    flex-shrink: 0;
+.form-group input::placeholder {
+  color: #94a3b8;
 }
-
-.password-input input {
-    width: 100%;
-    height: 100%;
-
-    padding: 0 14px 0 0;
-
-    border: none;
-    outline: none;
-
-    background: transparent;
-
-    color: #374151;
-
-    font-size: 14px;
-
-    box-sizing: border-box;
-}
-
-.password-input input::placeholder {
-    color: #9ca3af;
-}
-
-
-/* =========================================
-   PASSWORD HELP TEXT
-========================================= */
 
 .form-group small {
-    display: block;
-
-    margin-top: 7px;
-
-    color: #6b7280;
-
-    font-size: 12px;
-    line-height: 1.5;
+  font-size: 13px;
+  color: #94a3b8;
+  margin-top: 4px;
+  padding-left: 4px;
 }
 
-
-/* =========================================
-   PASSWORD INFORMATION
-========================================= */
-
-.password-info {
-    display: flex;
-    align-items: flex-start;
-
-    gap: 12px;
-
-    padding: 15px;
-
-    margin: 5px 0 24px;
-
-    background: #f8fafc;
-
-    border: 1px solid #e2e8f0;
-    border-radius: 9px;
-}
-
-.info-icon {
-    width: 25px;
-    height: 25px;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    background: #e5e7eb;
-
-    color: #374151;
-
-    border-radius: 50%;
-
-    font-size: 13px;
-    font-weight: 700;
-
-    flex-shrink: 0;
-}
-
-.password-info strong {
-    display: block;
-
-    margin-bottom: 5px;
-
-    color: #374151;
-
-    font-size: 13px;
-}
-
-.password-info p {
-    margin: 0;
-
-    color: #6b7280;
-
-    font-size: 12px;
-    line-height: 1.5;
-}
-
-
-/* =========================================
-   FORM ACTIONS
-========================================= */
-
-.form-actions {
-    display: flex;
-    justify-content: flex-end;
-
-    gap: 12px;
-
-    padding-top: 22px;
-
-    border-top: 1px solid #e5e7eb;
-}
-
-
-/* =========================================
-   CLEAR BUTTON
-========================================= */
-
-.cancel-btn {
-    height: 44px;
-
-    padding: 0 22px;
-
-    background: #ffffff;
-
-    color: #4b5563;
-
-    border: 1px solid #d1d5db;
-    border-radius: 8px;
-
-    font-size: 14px;
-    font-weight: 600;
-
-    cursor: pointer;
-
-    transition: all 0.2s ease;
-}
-
-.cancel-btn:hover:not(:disabled) {
-    background: #f3f4f6;
-    border-color: #9ca3af;
-}
-
-.cancel-btn:disabled {
-    opacity: 0.6;
-    cursor: not-allowed;
-}
-
-
-/* =========================================
-   CHANGE PASSWORD BUTTON
-========================================= */
-
+/* --- Change Password Button --- */
 .change-password-btn {
-    height: 44px;
-
-    padding: 0 24px;
-
-    background: #111827;
-
-    color: #ffffff;
-
-    border: none;
-    border-radius: 8px;
-
-    font-size: 14px;
-    font-weight: 600;
-
-    cursor: pointer;
-
-    transition: all 0.2s ease;
-
-    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.12);
+  padding: 16px 24px;
+  background: #0f172a;
+  color: #ffffff;
+  border: none;
+  border-radius: 40px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  font-family: inherit;
+  margin-top: 8px;
 }
 
 .change-password-btn:hover:not(:disabled) {
-    background: #374151;
-
-    transform: translateY(-1px);
-}
-
-.change-password-btn:active:not(:disabled) {
-    transform: translateY(0);
+  background: #1e293b;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.20);
 }
 
 .change-password-btn:disabled {
-    background: #9ca3af;
-
-    cursor: not-allowed;
-
-    box-shadow: none;
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
 }
 
+/* --- Responsive --- */
+@media (max-width: 768px) {
+  .settings-page {
+    padding: 20px;
+  }
 
-/* =========================================
-   FOOTER
-========================================= */
+  .settings-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
 
-.settings-footer {
-    max-width: 900px;
+  .settings-header h1 {
+    font-size: 24px;
+  }
 
-    margin: 20px auto 0;
-
+  .back-dashboard-btn {
+    width: 100%;
     text-align: center;
+  }
 
-    color: #9ca3af;
+  .settings-card {
+    padding: 24px;
+  }
 
-    font-size: 12px;
+  .settings-card-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .settings-icon {
+    width: 48px;
+    height: 48px;
+    font-size: 24px;
+  }
 }
 
-.settings-footer span {
-    margin-right: 7px;
+@media (max-width: 480px) {
+  .settings-page {
+    padding: 16px;
+  }
+
+  .settings-header h1 {
+    font-size: 22px;
+  }
+
+  .settings-card {
+    padding: 18px;
+    border-radius: 16px;
+  }
+
+  .settings-card-header h2 {
+    font-size: 18px;
+  }
+
+  .form-group input {
+    padding: 12px 14px;
+    font-size: 14px;
+  }
+
+  .change-password-btn {
+    padding: 14px 20px;
+    font-size: 15px;
+  }
+
+  .success-message,
+  .error-message {
+    padding: 12px 14px;
+    font-size: 13px;
+  }
 }
 
-
-/* =========================================
-   TABLET
-========================================= */
-
-@media (max-width: 700px) {
-
-    .settings-page {
-        padding: 22px;
-    }
-
-    .settings-header {
-        align-items: flex-start;
-    }
-
-    .settings-header h1 {
-        font-size: 28px;
-    }
-
-    .settings-card {
-        padding: 24px;
-    }
+/* --- Loading State --- */
+.change-password-btn.loading {
+  position: relative;
+  color: transparent;
 }
 
-
-/* =========================================
-   MOBILE
-========================================= */
-
-@media (max-width: 550px) {
-
-    .settings-page {
-        padding: 15px;
-    }
-
-    .settings-header {
-        flex-direction: column;
-        align-items: stretch;
-    }
-
-    .settings-header h1 {
-        font-size: 25px;
-    }
-
-    .settings-header p {
-        font-size: 13px;
-    }
-
-    .back-dashboard-btn {
-        width: 100%;
-    }
-
-    .settings-card {
-        padding: 18px;
-
-        border-radius: 10px;
-    }
-
-    .settings-card-header {
-        gap: 10px;
-    }
-
-    .settings-card-header h2 {
-        font-size: 18px;
-    }
-
-    .form-actions {
-        flex-direction: column-reverse;
-    }
-
-    .cancel-btn,
-    .change-password-btn {
-        width: 100%;
-    }
-
-    .password-info {
-        padding: 13px;
-    }
+.change-password-btn.loading::after {
+  content: '';
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  border: 3px solid #ffffff;
+  border-top-color: transparent;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
 }
 
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* --- Focus Visible for Accessibility --- */
+.form-group input:focus-visible {
+  outline: 2px solid #3b82f6;
+  outline-offset: 2px;
+}
+
+.change-password-btn:focus-visible {
+  outline: 2px solid #3b82f6;
+  outline-offset: 2px;
+}

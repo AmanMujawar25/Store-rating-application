@@ -2,6 +2,8 @@ import { useState } from "react";
 
 import Login from "./pages/Login";
 import Register from "./pages/Register";
+import ForgotPassword from "./pages/ForgotPassword";
+import ResetPassword from "./pages/ResetPassword";
 
 import AdminDashboard from "./pages/AdminDashboard";
 import UserDashboard from "./pages/UserDashboard";
@@ -15,210 +17,204 @@ import Ratings from "./pages/Ratings";
 import Settings from "./pages/Settings";
 
 function App() {
-    // =====================================
-    // PAGE STATE
-    // =====================================
+  // =====================================
+  // PAGE STATE
+  // =====================================
 
-    const [page, setPage] = useState("login");
+  const [page, setPage] = useState("login");
 
-    // Logged-in dashboard role
-    const [dashboard, setDashboard] = useState(null);
+  // Logged-in dashboard role
+  const [dashboard, setDashboard] = useState(null);
 
-    // Admin internal page
-    const [adminPage, setAdminPage] = useState("dashboard");
+  // Admin internal page
+  const [adminPage, setAdminPage] = useState("dashboard");
 
-    // =====================================
-    // LOGIN SUCCESS
-    // =====================================
+  // =====================================
+  // LOGIN SUCCESS
+  // =====================================
 
-    const handleLoginSuccess = (role) => {
-        console.log("Login role:", role);
+  const handleLoginSuccess = (role) => {
+    console.log("Login role:", role);
 
-        setDashboard(role);
+    setDashboard(role);
 
-        // Admin always starts from dashboard
-        if (role === "ADMIN") {
-            setAdminPage("dashboard");
-        }
-    };
-
-    // =====================================
-    // LOGOUT
-    // =====================================
-
-    const handleLogout = () => {
-        console.log("Logging out...");
-
-        // Remove authentication data
-        localStorage.removeItem("token");
-        localStorage.removeItem("user");
-
-        // Clear dashboard
-        setDashboard(null);
-
-        // Go to login page
-        setPage("login");
-
-        // Reset admin page
-        setAdminPage("dashboard");
-    };
-
-    // =====================================
-    // ADMIN DASHBOARD
-    // =====================================
-
-    if (dashboard === "ADMIN") {
-        return (
-            <>
-                {/* ADMIN MAIN DASHBOARD */}
-
-                {adminPage === "dashboard" && (
-                    <AdminDashboard
-                        setAdminPage={setAdminPage}
-                        onLogout={handleLogout}
-                    />
-                )}
-
-                {/* USERS */}
-
-                {adminPage === "users" && (
-                    <Users
-                        setAdminPage={setAdminPage}
-                    />
-                )}
-
-                {/* STORES */}
-
-                {adminPage === "stores" && (
-                    <Stores
-                        setAdminPage={setAdminPage}
-                    />
-                )}
-
-                {/* CREATE USER */}
-
-                {adminPage === "create-user" && (
-                    <CreateUser
-                        setAdminPage={setAdminPage}
-                    />
-                )}
-
-                {/* CREATE STORE */}
-
-                {adminPage === "create-store" && (
-                    <CreateStore
-                        setAdminPage={setAdminPage}
-                    />
-                )}
-
-                {/* RATINGS */}
-
-                {adminPage === "ratings" && (
-                    <Ratings
-                        setAdminPage={setAdminPage}
-                    />
-                )}
-
-                {/* REPORTS */}
-
-                {adminPage === "reports" && (
-                    <div
-                        style={{
-                            padding: "40px",
-                            minHeight: "100vh",
-                            background: "#f5f7fb",
-                        }}
-                    >
-                        <h1>Reports</h1>
-
-                        <p>
-                            Reports section coming soon.
-                        </p>
-
-                        <button
-                            onClick={() =>
-                                setAdminPage("dashboard")
-                            }
-                        >
-                            ← Back to Dashboard
-                        </button>
-                    </div>
-                )}
-
-                {/* SETTINGS */}
-
-                {adminPage === "settings" && (
-                    <Settings
-                        setAdminPage={setAdminPage}
-                    />
-                )}
-            </>
-        );
+    // Reset page when admin logs in
+    if (role === "ADMIN") {
+      setAdminPage("dashboard");
     }
+  };
 
-    // =====================================
-    // NORMAL USER DASHBOARD
-    // =====================================
+  // =====================================
+  // LOGOUT
+  // =====================================
 
-    if (dashboard === "NORMAL_USER") {
-        return (
-            <UserDashboard
-                onLogout={handleLogout}
-            />
-        );
-    }
+  const handleLogout = () => {
+    console.log("Logging out...");
 
-    // =====================================
-    // STORE OWNER DASHBOARD
-    // =====================================
+    localStorage.removeItem("token");
+    localStorage.removeItem("user");
 
-    if (dashboard === "STORE_OWNER") {
-        return (
-            <OwnerDashboard
-                onLogout={handleLogout}
-            />
-        );
-    }
+    setDashboard(null);
+    setPage("login");
+    setAdminPage("dashboard");
+  };
 
-    // =====================================
-    // LOGIN / REGISTER
-    // =====================================
+  // =====================================
+  // ADMIN DASHBOARD
+  // =====================================
 
+  if (dashboard === "ADMIN") {
     return (
-        <div>
-            {page === "login" ? (
-                <Login
-                    onRegister={() =>
-                        setPage("register")
-                    }
-                    onLoginSuccess={
-                        handleLoginSuccess
-                    }
-                />
-            ) : (
-                <>
-                    <Register
-                        onLogin={() =>
-                            setPage("login")
-                        }
-                    />
+      <>
+        {/* Admin Dashboard */}
 
-                    <p className="login-text">
-                        Already have an account?
+        {adminPage === "dashboard" && (
+          <AdminDashboard
+            setAdminPage={setAdminPage}
+            onLogout={handleLogout}
+          />
+        )}
 
-                        <span
-                            onClick={() =>
-                                setPage("login")
-                            }
-                        >
-                            {" "}
-                            Login
-                        </span>
-                    </p>
-                </>
-            )}
-        </div>
+        {/* Users */}
+
+        {adminPage === "users" && (
+          <Users
+            setAdminPage={setAdminPage}
+          />
+        )}
+
+        {/* Stores */}
+
+        {adminPage === "stores" && (
+          <Stores
+            setAdminPage={setAdminPage}
+          />
+        )}
+
+        {/* Create User */}
+
+        {adminPage === "create-user" && (
+          <CreateUser
+            setAdminPage={setAdminPage}
+          />
+        )}
+
+        {/* Create Store */}
+
+        {adminPage === "create-store" && (
+          <CreateStore
+            setAdminPage={setAdminPage}
+          />
+        )}
+
+        {/* Ratings */}
+
+        {adminPage === "ratings" && (
+          <Ratings
+            setAdminPage={setAdminPage}
+          />
+        )}
+
+        {/* Reports */}
+
+        {adminPage === "reports" && (
+          <div
+            style={{
+              padding: "40px",
+              minHeight: "100vh",
+              background: "#f5f7fb",
+            }}
+          >
+            <h1>Reports</h1>
+
+            <p>
+              Reports section coming soon.
+            </p>
+
+            <button
+              onClick={() =>
+                setAdminPage("dashboard")
+              }
+            >
+              Back to Dashboard
+            </button>
+          </div>
+        )}
+
+        {/* Settings */}
+
+        {adminPage === "settings" && (
+          <Settings
+            setAdminPage={setAdminPage}
+          />
+        )}
+      </>
     );
+  }
+
+  // =====================================
+  // NORMAL USER DASHBOARD
+  // =====================================
+
+  if (dashboard === "NORMAL_USER") {
+    return (
+      <UserDashboard
+        onLogout={handleLogout}
+      />
+    );
+  }
+
+  // =====================================
+  // STORE OWNER DASHBOARD
+  // =====================================
+
+  if (dashboard === "STORE_OWNER") {
+    return (
+      <OwnerDashboard
+        onLogout={handleLogout}
+      />
+    );
+  }
+
+  // =====================================
+  // FORGOT PASSWORD
+  // =====================================
+
+  if (page === "forgot-password") {
+    return (
+      <ForgotPassword
+        onLogin={() => setPage("login")}
+      />
+    );
+  }
+
+  // =====================================
+  // REGISTER
+  // =====================================
+
+  if (page === "register") {
+    return (
+      <Register
+        onLogin={() => setPage("login")}
+      />
+    );
+  }
+
+  // =====================================
+  // LOGIN
+  // =====================================
+
+  return (
+    <Login
+      onRegister={() => setPage("register")}
+
+      onForgotPassword={() =>
+        setPage("forgot-password")
+      }
+
+      onLoginSuccess={handleLoginSuccess}
+    />
+  );
 }
 
 export default App;

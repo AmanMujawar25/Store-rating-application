@@ -96,7 +96,7 @@ function Register({ onLogin }) {
         {/* Right Side */}
         <div className="register-right">
           <div className="register-header">
-            <h2>Create Account ✨</h2>
+            <h2>Create Account </h2>
             <p>Register to get started with Store Rating</p>
           </div>
 
@@ -106,7 +106,7 @@ function Register({ onLogin }) {
               <label>Full Name</label>
 
               <div className="register-input-wrapper">
-                <span>👤</span>
+                <span></span>
 
                 <input
                   type="text"
@@ -142,7 +142,7 @@ function Register({ onLogin }) {
               <label>Address</label>
 
               <div className="register-input-wrapper register-textarea-wrapper">
-                <span>📍</span>
+                <span></span>
 
                 <textarea
                   name="address"
@@ -159,7 +159,7 @@ function Register({ onLogin }) {
               <label>Password</label>
 
               <div className="register-input-wrapper">
-                <span>🔒</span>
+                <span></span>
 
                 <input
                   type="password"
